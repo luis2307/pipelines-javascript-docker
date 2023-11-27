@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: luispipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: luispipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: luispipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: luispipelinesjavascriptdocker 
+          image: azacrdemo001.azurecr.io/luispipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
